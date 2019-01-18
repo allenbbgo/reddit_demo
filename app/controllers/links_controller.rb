@@ -6,6 +6,10 @@ class LinksController < ApplicationController
   # GET /links.json
   def index
     @links = Link.all
+
+    @gg= "hi"
+    flash[:error] = @gg
+
   end
 
   # GET /links/1
