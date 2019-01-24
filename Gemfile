@@ -41,6 +41,8 @@ gem 'sassc-rails', '>= 2.0.0'
 gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'activerecord-reset-pk-sequence'
+gem  'hirb'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

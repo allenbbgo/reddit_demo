@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, only: [ :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index,:show]
 
   # GET /links
@@ -8,7 +8,7 @@ class LinksController < ApplicationController
     @links = Link.all
 
     @gg= "hi"
-    flash[:error] = @gg
+    #flash[:error] = @gg
 
   end
   def upvote
@@ -25,6 +25,8 @@ class LinksController < ApplicationController
   # GET /links/1
   # GET /links/1.json
   def show
+    @link = Link.find(params[:id])
+    @linkk = "google.com"
   end
 
   # GET /links/new
