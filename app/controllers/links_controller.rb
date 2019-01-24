@@ -27,6 +27,8 @@ class LinksController < ApplicationController
   def show
     @link = Link.find(params[:id])
     @linkk = "google.com"
+    @comment=Comment.all
+
   end
 
   # GET /links/new
@@ -77,6 +79,16 @@ class LinksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def destroy_comments
+    @link.destroy
+    respond_to do |format|
+      format.html { redirect_to links_url, notice: 'comments was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
