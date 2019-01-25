@@ -28,7 +28,7 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @linkk = "google.com"
     @comment=Comment.all
-
+    @user = User.find(params[:id])
   end
 
   # GET /links/new

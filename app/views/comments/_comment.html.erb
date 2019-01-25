@@ -1,5 +1,4 @@
 
-<%= div_for(comment) do %>
   <div class="comments_wrapper clearfix">
   <div class="pull-left">
    <p class="lead"><%= comment.body %></p>
@@ -8,11 +7,8 @@
 
   <div class="btn-group pull-right">
    <% if comment.user == current_user -%>
-      <% @comment.each do |comment| %>
-
+      
       <%= link_to('delete',link_comment_path(comment.link_id,comment),method: :delete ,data: { confirm: "are you sure?"}, class: "btn btn-default btn-xs") %>
-        <%end%>
      <% end %>
   </div>
   </div>
-<% end %>
